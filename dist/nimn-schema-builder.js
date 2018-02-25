@@ -12,7 +12,7 @@ function buildSchema(jsObj){
                 type: "array",
                 properties : {}
             }
-            schema.properties["item"] = _bs(jsObj[0]);
+            schema.properties["item"] = buildSchema(jsObj[0]);
             return schema;
         case "object":
             var schema = {
@@ -21,7 +21,7 @@ function buildSchema(jsObj){
             }
             var keys = Object.keys(jsObj);
             for(var i in keys){
-                schema.properties[keys[i]] = _bs(jsObj[keys[i]]);
+                schema.properties[keys[i]] = buildSchema(jsObj[keys[i]]);
             }
             return schema;
         case "string":
