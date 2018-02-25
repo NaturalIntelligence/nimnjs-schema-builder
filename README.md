@@ -1,5 +1,5 @@
 # nimnjs-schema-builder
-Build schema from JS object or JSON to feed into nimnjs
+Build schema from JS object or JSON to feed into [nimnjs](https://github.com/nimndata/nimnjs-node).
 
 
 ## Usages
@@ -31,4 +31,4 @@ var schema = builder.build(data);
 
 You can also use it in browser from [dist](dist/nimn-schema-builder.js) folder.
 
-Check the demo for instant use.
+Check the [demo](https://nimndata.github.io/nimnjs-schema-builder/) for instant use.
