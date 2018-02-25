@@ -4,7 +4,7 @@
   "description": "Build schema from JS object or JSON to feed into nimnjs",
   "main": "builder.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bundle": "browserify builder.js -s nimn-schema-builder -o dist/nimn-schema-builder.js"
   },
   "repository": {
     "type": "git",
@@ -16,10 +16,13 @@
     "builder",
     "schema"
   ],
-  "author": "Amit Gupta",
+  "author": "Amit Gupta (https://github.com/amitguptagwl)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/nimndata/nimnjs-schema-builder/issues"
   },
-  "homepage": "https://github.com/nimndata/nimnjs-schema-builder#readme"
+  "homepage": "https://github.com/nimndata/nimnjs-schema-builder#readme",
+  "devDependencies": {
+    "browserify": "^16.1.0"
+  }
 }
