@@ -15,7 +15,7 @@ var builder = require("nimn_schema_builder");
 var data = {
     name : "amit",
     age : 32,
-    male : true,
+    human : true,
     projects : [
         {
             name: "some",
@@ -27,6 +27,21 @@ var data = {
 }
 
 var schema = builder.build(data);
+
+/*
+var schema = {
+            name : "string",
+            age : "number",
+            human : "boolean",
+            projects : [
+                {
+                    name: "string",
+                    from: "date",
+                    decription : "string"
+                }
+            ]
+        };
+*/
 ```
 
 You can also use it in browser from [dist](dist/nimn-schema-builder.js) folder.
