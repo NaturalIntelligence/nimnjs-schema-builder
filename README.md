@@ -13,34 +13,54 @@ $npm install nimn_schema_builder
 var builder = require("nimn_schema_builder");
 
 var data = {
-    name : "amit",
-    age : 32,
-    human : true,
-    projects : [
+    "name" : "amit",
+    "age" : 32,
+    "human" : true,
+    "projects" : [
         {
-            name: "some",
-            from: new Date(),
-            //to: null,
-            decription : "some long description"
+            "name" : "some",
+            "description" : "some long description"
         }
     ]
-}
+};
 
 var schema = builder.build(data);
 
 /*
 var schema = {
-            name : "string",
-            age : "number",
-            human : "boolean",
-            projects : [
-                {
-                    name: "string",
-                    from: "date",
-                    decription : "string"
-                }
-            ]
-        };
+    "type": "map",
+    "detail": [
+        {
+            "type": "string",
+            "name": "name"
+        },
+        {
+            "type": "number",
+            "name": "age"
+        },
+        {
+            "type": "boolean",
+            "name": "human"
+        },
+        {
+            "type": "list",
+            "detail": {
+                "type": "map",
+                "detail": [
+                    {
+                        "type": "string",
+                        "name": "name"
+                    },
+                    {
+                        "type": "string",
+                        "name": "description"
+                    }
+                ]
+            },
+            "name": "projects"
+        }
+    ]
+}
 */
 ```
 

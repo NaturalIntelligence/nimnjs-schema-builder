@@ -11,34 +11,57 @@ describe("Nimn Schema Builder", function () {
                 {
                     name: "some",
                     from: new Date(),
-                    //to: null,
                     decription : "some long description"
                 }
             ]
         }
 
         var expected = {
-            name : "string",
-            age : "number",
-            male : "boolean",
-            projects : [
-                {
-                    name: "string",
-                    from: "date",
-                    //to: null,
-                    decription : "string"
+            type: 'map',
+            detail : [{
+                    name : "name",
+                    type : "string",
+                },{
+                    name : "age",
+                    type : "number",
+                },{
+                    name : "male",
+                    type : "boolean",
+                },{
+                    name : "projects",
+                    type : "list",
+                    detail : {
+                        type : "map",
+                        detail : [
+                            {   
+                                name : "name",
+                                type : "string",
+                            },{
+                                name : "from",
+                                type : "date",
+                            },{
+                                name : "decription",
+                                type  : "string"
+                            }
+                        ]       
+                    }
                 }
             ]
-        };
+        }
         
         var result = builder.build(data);
         //console.log(JSON.stringify(result,null,4));
         expect(result).toEqual(expected);
     });
 
-    it("should build schema for valid array", function () {
+   it("should build schema for valid array", function () {
         var data = ["amit", "kymar", "gupta"];
-        var expected = [ "string"];
+        var expected = {
+            type : "list",
+            detail : {
+                type : "string"
+            }
+        };
         
         var result = builder.build(data);
         //console.log(JSON.stringify(result,null,4));
