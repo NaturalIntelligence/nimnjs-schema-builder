@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/nimndata/nimnjs-schema-builder#readme",
   "devDependencies": {
-    "browserify": "^16.1.0"
+    "browserify": "^16.2.3"
   }
 }
